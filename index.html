@@ -27,7 +27,7 @@ button{font:inherit;color:inherit;border:0;background:none}
 #bg i:nth-child(2){background:radial-gradient(46% 50% at 88% 30%,var(--c2),transparent 72%);animation-delay:-14s;animation-duration:56s}
 #bg i:nth-child(3){background:radial-gradient(54% 48% at 52% 108%,var(--c3),transparent 72%);animation-delay:-27s}
 @keyframes dr{to{transform:translate3d(4%,3%,0) scale(1.08)}}
-#bg:after{content:"";position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+#bg:after{content:"";position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='[...]
 .g{background:var(--tile);-webkit-backdrop-filter:blur(40px) saturate(1.8);backdrop-filter:blur(40px) saturate(1.8);box-shadow:inset 0 0 0 .5px var(--hl);border-radius:26px;corner-shape:squircle}
 #pg{position:fixed;inset:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior:contain}
 #pg::-webkit-scrollbar{display:none}
@@ -54,7 +54,7 @@ button{font:inherit;color:inherit;border:0;background:none}
 /* Casa */
 #hm{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto;grid-auto-rows:minmax(120px,1fr);gap:14px}
 #gr{grid-column:1/-1;font-size:34px;font-weight:700;letter-spacing:-.03em;padding:0 4px 8px}
-.t{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:14px;color:var(--f2);transition:background .4s,color .4s,transform .3s cubic-bezier(.3,.9,.3,1)}
+.t{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:14px;color:var(--f2);transition:background .4s,color .4s,transform .3s cubic-bezier(.2,.8,.2,1)}
 .t:active{transform:scale(.96)}.t b{display:block;font-size:16px;font-weight:600;color:var(--fg)}.t small{font-size:13px;font-weight:500}
 .t.on,.t.on b{color:var(--onf)}.t.on{background:var(--on)}
 #wt{grid-column:span 2;grid-row:span 2;justify-content:space-between;align-items:flex-start;text-align:left;padding:26px;color:var(--fg)}
@@ -69,13 +69,9 @@ button{font:inherit;color:inherit;border:0;background:none}
 #tm{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--f2);font-variant-numeric:tabular-nums;margin-top:-8px}
 .c{display:flex;justify-content:center;align-items:center;gap:30px}.c button{width:64px;height:64px;border-radius:50%}.c button:active{opacity:.5}
 .c svg{width:36px;height:36px;fill:var(--fg)}#pp svg{width:52px;height:52px}
-#vr{display:flex;align-items:center;gap:12px;color:var(--f2)}#vr svg{width:18px;height:18px;fill:currentColor;stroke:currentColor}
-#vo{-webkit-appearance:none;appearance:none;flex:1;height:24px;background:none}
-#vo::-webkit-slider-runnable-track{height:5px;border-radius:3px;background:linear-gradient(90deg,#fff var(--v,50%),rgba(255,255,255,.25) 0)}
-#vo::-webkit-slider-thumb{-webkit-appearance:none;width:0;height:0}
 #ly{flex:1;height:100%;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(transparent,#000 16%,#000 68%,transparent);mask-image:linear-gradient(transparent,#000 16%,#000 68%,transparent)}
 #lyi{transition:transform .7s cubic-bezier(.3,.9,.3,1)}
-.l{font-size:clamp(28px,4.4vw,46px);font-weight:700;line-height:1.16;letter-spacing:-.025em;padding:11px 0;transform:scale(.94);transform-origin:left center;transition:opacity .6s,filter .6s,transform .7s cubic-bezier(.3,.9,.3,1)}
+.l{font-size:clamp(28px,4.4vw,46px);font-weight:700;line-height:1.16;letter-spacing:-.025em;padding:11px 0;transform:scale(.94);transform-origin:left center;transition:opacity .6s,filter .6s,transform .6s cubic-bezier(.2,.8,.2,1);opacity:.35;filter:blur(0);color:var(--fg)}
 .l.a{transform:scale(1)}
 #nl{position:absolute;top:45%;font-size:20px;font-weight:600;color:var(--f2)}
 #dt{position:fixed;bottom:6px;left:0;right:0;display:flex;justify-content:center;z-index:5}
@@ -105,26 +101,26 @@ button{font:inherit;color:inherit;border:0;background:none}
  <section class="p" id="pl">
   <div id="L"><img id="cv" alt=""><div><div id="ti"></div><div id="ar"></div></div>
    <div><div id="pb"><div id="pf"></div></div></div><div id="tm"><span id="t1">0:00</span><span id="t2">-0:00</span></div>
-   <div class="c"><button id="pv"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zM20 6v12L9.5 12z"/></svg></button><button id="pp"></button><button id="nx"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM4 6v12l10.5-6z"/></svg></button></div>
-   <div id="vr"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 4V5L7 9z" stroke="none"/></svg><input id="vo" type="range" min="0" max="100"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 4V5L7 9z" stroke="none"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11" fill="none" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+   <div class="c"><button id="pv"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zM20 6v12L9.5 12z"/></svg></button><button id="pp"></button><button id="nx"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zm-9.5 0L16 12l-9.5 6z"/></svg></button></div>
+  </div>
   <div id="ly"><div id="lyi"></div><div id="nl"></div></div></section>
 </div>
 <div id="dt"></div>
 <script>
 const CLIENT_ID='e7581efe4b2645f0bb2a582e982fd5fd',SC='user-read-playback-state user-modify-playback-state',RU=location.origin+location.pathname;
 // i: b=lâmpada l=luminária s=caixa | on/off: URL webhook (opcional) | app: pacote Android (confira na Play Store)
-const DEVICES=[{n:'Luminária',s:'CozyLife',i:'l',on:'',off:'',app:'com.cozylife.app'},{n:'Lâmpada',s:'SmartLife',i:'b',on:'',off:'',app:'com.tuya.smartlife'},{n:'Echo Dot',s:'Alexa',i:'s',app:'com.amazon.dee.app'}];
+const DEVICES=[{n:'Luminária',s:'CozyLife',i:'l',on:'',off:'',app:'com.cozylife.app'},{n:'Lâmpada',s:'SmartLife',i:'b',on:'',off:'',app:'com.tuya.smartlife'},{n:'Echo Dot',s:'Alexa',i:'s',app:'com.amazon.echo'}];
 const $=s=>document.querySelector(s),LS=localStorage,P=[],R=document.documentElement;
 const pg=$('#pg'),pi=()=>Math.round(pg.scrollLeft/pg.clientWidth),goto=i=>pg.scrollTo({left:i*pg.clientWidth,behavior:'smooth'});
-const IC={b:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>',l:'<path d="M8 3h8l3 9H5zM12 12v8M8 21h8"/>',s:'<rect x="6" y="3" width="12" height="18" rx="3.5"/><circle cx="12" cy="14.5" r="3.2"/><circle cx="12" cy="7.5" r=".7"/>',m:'<path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/>'};
+const IC={b:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>',l:'<path d="M8 3h8l3 9H5zM12 12v8M8 21h8"/>',s:'<rect x="6" y="3" width="12" height="18" rx="4"/><path d="M12 7v10M9 10h6M9 15h6"/>'};
 const ico=k=>'<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'+IC[k]+'</svg>';
 const PL='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>',PA='<svg viewBox="0 0 24 24"><path d="M7 5h3.6v14H7zM13.4 5H17v14h-3.6z"/></svg>';
 // Cores: tema automático (claro de dia, escuro à noite) e paleta da capa na tela Música
 const PAL={l:['#cfdcf7','#f4dccd','#d9d2f2','#eceef4'],d:['#26307a','#4a2563','#0f3d46','#0a0a0f']};let dk,CV=null;
 function pal(){const p=pi()==3&&CV,a=p?CV:PAL[dk?'d':'l'];['--c1','--c2','--c3','--bs'].forEach((k,i)=>R.style.setProperty(k,a[i]));R.dataset.m=p||dk?'d':'l'}
 function th(){const h=new Date().getHours(),n=!(h>=7&&h<18);if(n!==dk){dk=n;pal()}}
-function hsl(r,g,b){r/=255;g/=255;b/=255;const m=Math.max(r,g,b),n=Math.min(r,g,b),l=(m+n)/2,d=m-n;let h=0,s=0;if(d){s=d/(1-Math.abs(2*l-1));h=m==r?((g-b)/d%6):m==g?(b-r)/d+2:(r-g)/d+4;h=(h*60+360)%360}return[h,s]}
-function fromCover(u){const i=new Image;i.crossOrigin='anonymous';i.onload=()=>{try{const c=document.createElement('canvas');c.width=c.height=3;const x=c.getContext('2d');x.drawImage(i,0,0,3,3);const d=x.getImageData(0,0,3,3).data,o=[0,4,8].map(k=>hsl(d[k*4],d[k*4+1],d[k*4+2])),f=(a,l)=>`hsl(${a[0]|0} ${Math.round(Math.min(.7,a[1]*1.1+.1)*100)}% ${l}%)`;CV=[f(o[0],38),f(o[1],30),f(o[2],42),f(o[1],8)];pal()}catch(e){}};i.src=u}
+function hsl(r,g,b){r/=255;g/=255;b/=255;const m=Math.max(r,g,b),n=Math.min(r,g,b),l=(m+n)/2,d=m-n;let h=0,s=0;if(d){s=d/(1-Math.abs(2*l-1));h=m==r?((g-b)/d%6):m==g?(b-r)/d+2:(r-g)/d+4;h=(h*60+360)%360;return`hsl(${Math.round(h)} ${Math.round(s*100)}% ${Math.round(l*100)}%)`}return`hsl(0 0% ${Math.round(l*100)}%)`}
+function fromCover(u){const i=new Image;i.crossOrigin='anonymous';i.onload=()=>{try{const c=document.createElement('canvas');c.width=c.height=3;const x=c.getContext('2d');x.drawImage(i,0,0,3,3);const p=x.getImageData(0,0,3,3).data;let r=0,g=0,b=0;for(let j=0;j<p.length;j+=4){r+=p[j];g+=p[j+1];b+=p[j+2]}r/=p.length/4;g/=p.length/4;b/=p.length/4;CV=hsl(r,g,b);pal()}catch{}};i.src=u}
 // Relógio, data, saudação
 const DW=new Intl.DateTimeFormat('pt-BR',{weekday:'long'}),DM=new Intl.DateTimeFormat('pt-BR',{day:'numeric',month:'long'});
 function tick(){const d=new Date(),p=n=>String(n).padStart(2,'0'),s=d.getSeconds(),m=d.getMinutes()+s/60,h=d.getHours()%12+m/60;
@@ -134,20 +130,20 @@ function tick(){const d=new Date(),p=n=>String(n).padStart(2,'0'),s=d.getSeconds
  [['hd',h*30],['md',m*6],['sd',s*6]].forEach(([i,a])=>$('#'+i).setAttribute('transform',`rotate(${a} 50 50)`));th()}
 tick();setInterval(tick,1e3);
 // Clima (Open-Meteo, sem chave)
-function wx(){const g=(la,lo)=>fetch(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&current=temperature_2m,weather_code`).then(r=>r.json()).then(j=>{const c=j.current,w=c.weather_code,t=Math.round(c.temperature_2m)+'°',s=w==0?'Céu limpo':w<4?'Parcialmente nublado':w<50?'Neblina':w<60?'Garoa':w<70?'Chuva':w<80?'Neve':w<90?'Pancadas de chuva':'Tempestade';$('#wk1').textContent=t;$('#wk2').textContent=s;$('#wtmp').textContent=t;$('#wc').textContent=s}).catch(()=>{});
- if(LS.loc)g(...JSON.parse(LS.loc));else navigator.geolocation&&navigator.geolocation.getCurrentPosition(p=>{LS.loc=JSON.stringify([p.coords.latitude,p.coords.longitude]);g(p.coords.latitude,p.coords.longitude)},()=>{})}
+function wx(){const g=(la,lo)=>fetch(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&current=temperature_2m,weather_code`).then(r=>r.json()).then(j=>{const c=j.current,w=c.weather_code;const t=Math.round(c.temperature_2m);$('#wtmp').textContent=t+'°';$('#wc').textContent=['Céu limpo','Parcialmente nublado','Nublado','Chuva leve','Chuva','Trovoada'][Math.min(5,Math.max(0,w))]||'Clima'}).catch(()=>$('#wc').textContent='Sem dados');
+ if(LS.loc)g(...JSON.parse(LS.loc));else navigator.geolocation&&navigator.geolocation.getCurrentPosition(p=>{LS.loc=JSON.stringify([p.coords.latitude,p.coords.longitude]);g(p.coords.latitude,p.coords.longitude)})}
 wx();setInterval(wx,9e5);
 // Dispositivos e cena
 const st=JSON.parse(LS.d||'{}'),bs=[];
 DEVICES.forEach((d,k)=>{const b=bs[k]=document.createElement('button');b.className='g t'+(st[k]?' on':'');b.innerHTML=ico(d.i)+`<div><b>${d.n}</b><small>${d.s}</small></div>`;
- b.onclick=()=>{if(d.on||d.off){st[k]=!st[k];fetch(st[k]?d.on:d.off,{mode:'no-cors'}).catch(()=>{});b.classList.toggle('on',st[k]);LS.d=JSON.stringify(st)}else if(d.app)location='intent://#Intent;package='+d.app+';end'};$('#hm').append(b)});
+ b.onclick=()=>{if(d.on||d.off){st[k]=!st[k];fetch(st[k]?d.on:d.off,{mode:'no-cors'}).catch(()=>{});b.classList.toggle('on',st[k]);LS.d=JSON.stringify(st)}else if(d.app)location='intent://'+d.app+'#Intent;scheme='+d.app+';package='+d.app+';end'};$('#hm').append(b)});
 const sc=document.createElement('button');sc.className='g t';sc.innerHTML=ico('m')+'<div><b>Boa noite</b><small>Cena</small></div>';
 sc.onclick=()=>{DEVICES.forEach((d,k)=>{if(d.off){fetch(d.off,{mode:'no-cors'}).catch(()=>{});st[k]=false;bs[k].classList.remove('on')}});LS.d=JSON.stringify(st)};$('#hm').append(sc);
 // Spotify (PKCE, sem servidor)
 const b64=b=>btoa(String.fromCharCode(...new Uint8Array(b))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
-async function login(){const v=b64(crypto.getRandomValues(new Uint8Array(48)));LS.v=v;const c=b64(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(v)));location=`https://accounts.spotify.com/authorize?response_type=code&client_id=${CLIENT_ID}&scope=${encodeURIComponent(SC)}&redirect_uri=${encodeURIComponent(RU)}&code_challenge_method=S256&code_challenge=${c}`}
-async function tok(o){const r=await fetch('https://accounts.spotify.com/api/token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:CLIENT_ID,...o})}),j=await r.json();if(j.access_token){LS.at=j.access_token;LS.exp=Date.now()+j.expires_in*1e3-6e4;if(j.refresh_token)LS.rt=j.refresh_token}return j}
-async function api(p,m='GET'){if(!LS.at)return;try{if(Date.now()>LS.exp)await tok({grant_type:'refresh_token',refresh_token:LS.rt});const r=await fetch('https://api.spotify.com/v1/'+p,{method:m,headers:{Authorization:'Bearer '+LS.at}});return r.status==200?r.json():null}catch(e){}}
+async function login(){const v=b64(crypto.getRandomValues(new Uint8Array(48)));LS.v=v;const c=b64(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(v)));location=`https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${encodeURIComponent(RU)}&scope=${encodeURIComponent(SC)}&code_challenge_method=S256&code_challenge=${c}`}
+async function tok(o){const r=await fetch('https://accounts.spotify.com/api/token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({...o,client_id:CLIENT_ID})});const j=await r.json();LS.at=j.access_token;LS.rt=j.refresh_token;LS.exp=Date.now()+((j.expires_in||3600)*1000)-5000}
+async function api(p,m='GET'){if(!LS.at)return;try{if(Date.now()>LS.exp)await tok({grant_type:'refresh_token',refresh_token:LS.rt});const r=await fetch('https://api.spotify.com/v1/'+p,{method:m,headers:{Authorization:'Bearer '+LS.at}});if(!r.ok)throw new Error(r.status);return r.json&&await r.json()}catch{return null}}
 let S=null,t0=0,L=[],tid='',ai=-2,cu='';
 async function poll(){if(!LS.at)return;const j=await api('me/player');S=j&&j.item?j:null;t0=performance.now();ui();if(S&&S.item.id!=tid){tid=S.item.id;lyr(S.item)}}
 function ui(){const i=S&&S.item,a=i?i.artists.map(x=>x.name).join(', '):'',pl=S&&S.is_playing;
@@ -155,11 +151,11 @@ function ui(){const i=S&&S.item,a=i?i.artists.map(x=>x.name).join(', '):'',pl=S&
  $('#ci').style.display=i?'block':'none';$('#cb').style.display=i?'block':'none';$('#pp').innerHTML=pl?PA:PL;$('#cb').innerHTML=pl?PA:PL;
  if(!i){if(CV){CV=null;pal()}cu='';return}
  const u=i.album.images[0].url;if(u!=cu){cu=u;$('#cv').src=u;$('#ci').src=u;fromCover(u)}
- $('#ti').textContent=i.name;$('#ar').textContent=a;if(S.device&&document.activeElement!=$('#vo')){$('#vo').value=S.device.volume_percent;$('#vo').style.setProperty('--v',S.device.volume_percent+'%')}}
+ $('#ti').textContent=i.name;$('#ar').textContent=a}
 // Letras sincronizadas (LRCLIB)
 async function lyr(i){L=[];P.length=0;$('#lyi').replaceChildren();$('#lyi').style.transform='';$('#nl').textContent='';ai=-2;
  try{const u=new URL('https://lrclib.net/api/get');u.search=new URLSearchParams({track_name:i.name,artist_name:i.artists[0].name,album_name:i.album.name,duration:Math.round(i.duration_ms/1e3)});
-  const r=await fetch(u),j=r.ok?await r.json():{};L=(j.syncedLyrics||'').split('\n').map(x=>{const m=x.match(/^\[(\d+):(\d+\.?\d*)\]\s*(.*)/);return m&&m[3]?{t:m[1]*60+ +m[2],x:m[3]}:0}).filter(Boolean)}catch(e){}
+  const r=await fetch(u),j=r.ok?await r.json():{};L=(j.syncedLyrics||'').split('\n').map(x=>{const m=x.match(/^\[(\d+):(\d+\.?\d*)\]\s*(.*)/);return m&&m[3]?{t:m[1]*60+ +m[2],x:m[3]}:0}).filter(Boolean)}catch{}
  if(!L.length){$('#nl').textContent='Sem letra sincronizada';return}
  L.forEach(l=>{const p=document.createElement('p');p.className='l';p.style.opacity=.3;p.textContent=l.x;P.push(p);$('#lyi').append(p)})}
 function paint(k){P.forEach((p,j)=>{const d=Math.abs(j-k);p.className='l'+(d?'':' a');p.style.opacity=d?Math.max(.14,.46-d*.08):1;p.style.filter=d?`blur(${Math.min(d,4)*.9}px)`:'none'})}
@@ -170,15 +166,14 @@ setInterval(()=>{if(!S)return;const ms=S.progress_ms+(S.is_playing?performance.n
  if(k!=ai){ai=k;paint(k);if(k>=0){const e=P[k];$('#lyi').style.transform=`translateY(${$('#ly').clientHeight*.4-e.offsetTop-e.offsetHeight/2}px)`}}},250);
 const go=(p,m)=>api(p,m).then(()=>setTimeout(poll,350)),tg=()=>go(S&&S.is_playing?'me/player/pause':'me/player/play','PUT');
 $('#pp').onclick=$('#cb').onclick=tg;$('#nx').onclick=()=>go('me/player/next','POST');$('#pv').onclick=()=>go('me/player/previous','POST');
-$('#vo').oninput=e=>e.target.style.setProperty('--v',e.target.value+'%');$('#vo').onchange=e=>api('me/player/volume?volume_percent='+e.target.value,'PUT');
 $('#pb').onclick=e=>{if(S){const r=e.currentTarget.getBoundingClientRect();go('me/player/seek?position_ms='+Math.round((e.clientX-r.left)/r.width*S.item.duration_ms),'PUT')}};
 // Navegação por deslize
 $('#dt').innerHTML='<i></i>'.repeat(4);const dots=[...$('#dt').children];let lm;
 pg.onscroll=()=>{const k=pi();dots.forEach((d,j)=>d.classList.toggle('on',j==k));if((k==3)!==lm){lm=k==3;pal()}};pg.onscroll();
 $('#dt').onclick=e=>{const k=dots.indexOf(e.target);k>=0&&goto(k)};
 $('#cm').onclick=()=>LS.at?goto(3):login();
-let idle;const rst=()=>{clearTimeout(idle);idle=setTimeout(()=>{if(pi()<3||!(S&&S.is_playing))goto(0)},9e4)};['pointerdown','scroll','keydown'].forEach(e=>addEventListener(e,rst,{passive:true,capture:true}));rst();
-(async()=>{const q=new URLSearchParams(location.search);if(q.get('code')){await tok({grant_type:'authorization_code',code:q.get('code'),redirect_uri:RU,code_verifier:LS.v});history.replaceState(0,'',RU)}
+let idle;const rst=()=>{clearTimeout(idle);idle=setTimeout(()=>{if(pi()<3||!(S&&S.is_playing))goto(0)},9e4)};['pointerdown','scroll','keydown'].forEach(e=>addEventListener(e,rst,{passive:true,capture:true}));
+(async()=>{const q=new URLSearchParams(location.search);if(q.get('code')){await tok({grant_type:'authorization_code',code:q.get('code'),redirect_uri:RU,code_verifier:LS.v});history.replaceState(0,'',location.pathname)};
  ui();poll();setInterval(()=>{if(!document.hidden)poll()},3e3)})();
 const wl=()=>navigator.wakeLock&&navigator.wakeLock.request('screen').catch(()=>{});wl();document.addEventListener('visibilitychange',()=>!document.hidden&&wl());
 if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");
