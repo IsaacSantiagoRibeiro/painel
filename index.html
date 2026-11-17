@@ -69,6 +69,10 @@ button{font:inherit;color:inherit;border:0;background:none}
 #tm{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--f2);font-variant-numeric:tabular-nums;margin-top:-8px}
 .c{display:flex;justify-content:center;align-items:center;gap:30px}.c button{width:64px;height:64px;border-radius:50%}.c button:active{opacity:.5}
 .c svg{width:36px;height:36px;fill:var(--fg)}#pp svg{width:52px;height:52px}
+#vr{display:flex;align-items:center;gap:12px;color:var(--f2)}#vr svg{width:18px;height:18px;fill:currentColor;stroke:currentColor}
+#vo{-webkit-appearance:none;appearance:none;flex:1;height:24px;background:none}
+#vo::-webkit-slider-runnable-track{height:5px;border-radius:3px;background:linear-gradient(90deg,#fff var(--v,50%),rgba(255,255,255,.25) 0)}
+#vo::-webkit-slider-thumb{-webkit-appearance:none;width:0;height:0}
 #ly{flex:1;height:100%;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(transparent,#000 16%,#000 68%,transparent);mask-image:linear-gradient(transparent,#000 16%,#000 68%,transparent)}
 #lyi{transition:transform .7s cubic-bezier(.3,.9,.3,1)}
 .l{font-size:clamp(28px,4.4vw,46px);font-weight:700;line-height:1.16;letter-spacing:-.025em;padding:11px 0;transform:scale(.94);transform-origin:left center;transition:opacity .6s,filter .6s,transform .6s cubic-bezier(.2,.8,.2,1);opacity:.35;filter:blur(0);color:var(--fg)}
@@ -102,6 +106,7 @@ button{font:inherit;color:inherit;border:0;background:none}
   <div id="L"><img id="cv" alt=""><div><div id="ti"></div><div id="ar"></div></div>
    <div><div id="pb"><div id="pf"></div></div></div><div id="tm"><span id="t1">0:00</span><span id="t2">-0:00</span></div>
    <div class="c"><button id="pv"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zM20 6v12L9.5 12z"/></svg></button><button id="pp"></button><button id="nx"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zm-9.5 0L16 12l-9.5 6z"/></svg></button></div>
+   <div id="vr"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 4V5L7 9z" stroke="none"/></svg><input id="vo" type="range" min="0" max="100"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 4V5L7 9z" stroke="none"/><path d="M15 9a5 5 0 0 1 0 6M17 6a9 9 0 0 1 0 12" fill="none" stroke-width="2"/></svg></div>
   </div>
   <div id="ly"><div id="lyi"></div><div id="nl"></div></div></section>
 </div>
@@ -151,7 +156,7 @@ function ui(){const i=S&&S.item,a=i?i.artists.map(x=>x.name).join(', '):'',pl=S&
  $('#ci').style.display=i?'block':'none';$('#cb').style.display=i?'block':'none';$('#pp').innerHTML=pl?PA:PL;$('#cb').innerHTML=pl?PA:PL;
  if(!i){if(CV){CV=null;pal()}cu='';return}
  const u=i.album.images[0].url;if(u!=cu){cu=u;$('#cv').src=u;$('#ci').src=u;fromCover(u)}
- $('#ti').textContent=i.name;$('#ar').textContent=a}
+ $('#ti').textContent=i.name;$('#ar').textContent=a;if(S.device&&document.activeElement!=$('#vo')){$('#vo').value=S.device.volume_percent;$('#vo').style.setProperty('--v',S.device.volume_percent+'%')}}
 // Letras sincronizadas (LRCLIB)
 async function lyr(i){L=[];P.length=0;$('#lyi').replaceChildren();$('#lyi').style.transform='';$('#nl').textContent='';ai=-2;
  try{const u=new URL('https://lrclib.net/api/get');u.search=new URLSearchParams({track_name:i.name,artist_name:i.artists[0].name,album_name:i.album.name,duration:Math.round(i.duration_ms/1e3)});
@@ -166,6 +171,7 @@ setInterval(()=>{if(!S)return;const ms=S.progress_ms+(S.is_playing?performance.n
  if(k!=ai){ai=k;paint(k);if(k>=0){const e=P[k];$('#lyi').style.transform=`translateY(${$('#ly').clientHeight*.4-e.offsetTop-e.offsetHeight/2}px)`}}},250);
 const go=(p,m)=>api(p,m).then(()=>setTimeout(poll,350)),tg=()=>go(S&&S.is_playing?'me/player/pause':'me/player/play','PUT');
 $('#pp').onclick=$('#cb').onclick=tg;$('#nx').onclick=()=>go('me/player/next','POST');$('#pv').onclick=()=>go('me/player/previous','POST');
+$('#vo').oninput=e=>e.target.style.setProperty('--v',e.target.value+'%');$('#vo').onchange=e=>api('me/player/volume?volume_percent='+e.target.value,'PUT');
 $('#pb').onclick=e=>{if(S){const r=e.currentTarget.getBoundingClientRect();go('me/player/seek?position_ms='+Math.round((e.clientX-r.left)/r.width*S.item.duration_ms),'PUT')}};
 // Navegação por deslize
 $('#dt').innerHTML='<i></i>'.repeat(4);const dots=[...$('#dt').children];let lm;
