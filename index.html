@@ -182,4 +182,5 @@ let idle;const rst=()=>{clearTimeout(idle);idle=setTimeout(()=>{if(pi()<3||!(S&&
  ui();poll();setInterval(()=>{if(!document.hidden)poll()},3e3)})();
 const wl=()=>navigator.wakeLock&&navigator.wakeLock.request('screen').catch(()=>{});wl();document.addEventListener('visibilitychange',()=>!document.hidden&&wl());
 if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");
+ $('#num').onclick=()=>document.fullscreenElement?document.exitFullscreen():R.requestFullscreen({navigationUI:'hide'}).catch(()=>{});
 </script></body></html>
