@@ -181,4 +181,5 @@ let idle;const rst=()=>{clearTimeout(idle);idle=setTimeout(()=>{if(pi()<3||!(S&&
 (async()=>{const q=new URLSearchParams(location.search);if(q.get('code')){await tok({grant_type:'authorization_code',code:q.get('code'),redirect_uri:RU,code_verifier:LS.v});history.replaceState(0,'',RU)}
  ui();poll();setInterval(()=>{if(!document.hidden)poll()},3e3)})();
 const wl=()=>navigator.wakeLock&&navigator.wakeLock.request('screen').catch(()=>{});wl();document.addEventListener('visibilitychange',()=>!document.hidden&&wl());
+if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");
 </script></body></html>
